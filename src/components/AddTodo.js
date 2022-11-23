@@ -11,7 +11,7 @@ const AddTodo = () => {
         e.preventDefault()
         if (todo !== '') {
             dispatch(addTodo({
-                id: todos.length + 1,                
+                id: todos.length + 1,
                 title: todo,
                 done: false,
             }))
@@ -21,7 +21,7 @@ const AddTodo = () => {
     return (
         <div className='addTodo'>
             <form onSubmit={submitHandle}>
-                <input value={todo} onChange={e => { setTodo(e.target.value) }} type="text" />
+                <input value={todo} onChange={e => setTodo(e.target.value)} type="text" />
                 <button className='buttonAdd' onClick={submitHandle} type="submit">Add Todo</button>
             </form>
         </div>
