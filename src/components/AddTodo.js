@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addTodo } from '../context/todoSlice';
+import { nanoid } from 'nanoid'
 
 const AddTodo = () => {
     const [todo, setTodo] = useState("");
@@ -11,7 +12,7 @@ const AddTodo = () => {
         e.preventDefault()
         if (todo !== '') {
             dispatch(addTodo({
-                id: todos.length + 1,
+                id: nanoid(),
                 title: todo,
                 done: false,
             }))
