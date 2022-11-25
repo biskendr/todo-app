@@ -1,11 +1,16 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addTodo } from '../context/todoSlice';
 import { nanoid } from 'nanoid'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
+
+const iconPlus = <FontAwesomeIcon icon={faPlus} />
+
+
 const AddTodo = () => {
-    const [todo, setTodo] = useState("");
-    const { todos } = useSelector(state => state.todo)
+    const [todo, setTodo] = useState("");    
     const dispatch = useDispatch();
 
     const submitHandle = (e) => {
@@ -22,8 +27,8 @@ const AddTodo = () => {
     return (
         <div className='addTodo'>
             <form onSubmit={submitHandle}>
-                <input value={todo} onChange={e => setTodo(e.target.value)} type="text" />
-                <button className='buttonAdd' onClick={submitHandle} type="submit">Add Todo</button>
+                <input placeholder="Add todo" value={todo} onChange={e => setTodo(e.target.value)} maxLength="150" type="text" />
+                <button className='buttonAdd' onClick={submitHandle} type="submit">{iconPlus}</button>
             </form>
         </div>
     )

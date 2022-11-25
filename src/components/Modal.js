@@ -3,6 +3,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { closeModal } from '../context/modalSlice'
 import { editTodo } from '../context/todoSlice'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark, faPenToSquare } from '@fortawesome/free-solid-svg-icons'
+
+const iconRemove = <FontAwesomeIcon icon={faXmark} />
+const iconSave = <FontAwesomeIcon icon={faPenToSquare} />
+
 const Modal = () => {
     const data = useSelector(state => state.modal)
     const [todo, setTodo] = useState(data.data.title)
@@ -27,16 +33,16 @@ const Modal = () => {
     return (
         <div className='modal-wrapper'>
             <div className='modal'>
+                <button className='buttonClose' onClick={closeHandle}>{iconRemove}</button>
                 <p>{data.data.title}</p>
-                <form onSubmit={submitHandle}>
-                    <input value={todo} onChange={e => setTodo(e.target.value)} type="text" />
+                <form className='modalForm' onSubmit={submitHandle}>
+                    <input className='setTitle' value={todo} onChange={e => setTodo(e.target.value)} type="text"  maxLength="150"/>
                     <label>
-                        <input type="checkbox" name='doneSet' className='done' checked={done} onChange={e => setDone(e.target.checked)} />
-                        Tamamlandı
+                        <input type="checkbox" name='doneSet' className='doneSet' checked={done} onChange={e => setDone(e.target.checked)} />
+                        Completed
                     </label>
-                    <button className='buttonSave' onClick={submitHandle} type="submit">Kaydet</button>
+                    <button className='buttonSave' onClick={submitHandle} type="submit">{iconSave} Save</button>
                 </form>
-                <button className='buttonClose' onClick={closeHandle}>Kapat</button>
             </div>
         </div>
     )
