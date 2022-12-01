@@ -1,0 +1,32 @@
+.todoList {
+  @include media-screen-wh(100%, 100%, 90%, 80%, 70%);
+  @include box-shadow(0px, 10px, 0px, -3px, rgba(0, 0, 0, 0.1));
+  li {
+    @include flex-center;
+    @include box-shadow(0px, 5px, 0px, -3px, rgba(0, 0, 0, 0.1));
+    padding: 1em 0;
+    margin: 2em;
+    p {
+      @include media-screen-fontsize(
+        $font-xs,
+        $font-s,
+        $font-m,
+        $font-m,
+        $font-l
+      );
+      flex: 70%;
+      margin: 0 1em;      
+      overflow: hidden;
+    }
+    button {      
+      @include media-screen-wh($font-m, $font-l, $font-l, $font-l, $font-xl);
+      @include media-screen-fontsize(
+        $font-xs,
+        $font-s,
+        $font-s,
+        $font-s,
+        $font-m
+      );
+    }
+  }
+}

@@ -1,0 +1,47 @@
+.addTodo {
+  form {
+    @include flex-center;
+  }
+  input {
+    font: $font-s $font-monospace;
+    padding: 0.5em 1em;
+    margin: 1em;
+    outline: none;
+    border-radius: 55px;
+    border: 2px solid $color-primary;
+    &:focus {
+      outline: none;
+      border-color: $color-blue;
+      transition-duration: 0.5s;
+    }
+    @include media-screen-fontsize(
+      $font-xs,
+      $font-s,
+      $font-s,
+      $font-s,
+      $font-m
+    );
+  }
+  button {
+    font-size: $font-m;
+    &:active {
+      @include media-screen-fontsize(
+        $font-s,
+        $font-m,
+        $font-m,
+        $font-m,
+        $font-l
+      );
+      transition-duration: 0.1s;
+    }
+   
+    @include media-screen-wh($font-m, $font-l, $font-l, $font-l, $font-xl);
+    @include media-screen-fontsize(
+      $font-xs,
+      $font-s,
+      $font-s,
+      $font-s,
+      $font-m
+    );
+  }
+}

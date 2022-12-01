@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Prompt&family=Roboto+Mono:wght@700&display=swap");
+
+//reset
+*,
+*::after,
+*::before,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+//font-family
+$font-sans-serif: "Prompt", sans-serif;
+$font-monospace: "Roboto Mono", monospace;
+
+//background-color
+$bg-color-primary: #fff;
+$bg-color-secondary: #333;
+
+//color
+$color-primary: #000;
+$color-secondary: #f6f6f8;
+$color-white: #fff;
+$color-red: #f3371a;
+$color-blue: #2d7dbc;
+$color-green: #67a03f;
+$color-yellow: #f2af3a;
+
+//font size
+$font-xxs: 0.6rem;
+$font-xs: 0.8rem;
+$font-s: 1.2rem;
+$font-m: 1.8rem;
+$font-l: 2.4rem;
+$font-xl: 3.6rem;
+$font-xxl: 6rem;
+
+//media query
+$media-xsmall: 320px;
+$media-small: 768px;
+$media-medium: 1024px;
+$media-large: 1440px;
+$media-xlarge: 2200px;
+
+//button colors
+$colors: (
+  buttonRemove: $color-red,
+  buttonAdd: $color-blue,
+  buttonSave: $color-yellow,
+  buttonEdit: $color-green,
+);
+
+@each $name, $color in $colors {
+  .#{$name} {
+    background-color: $color;
+    width: 50px;
+    height: 50px;
+    color: $color-white;
+    border: none;
+    font-size: $font-s;
+  }
+}
+
+@mixin flex-center {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin box-shadow($x, $y, $blur, $c, $rgba) {
+  -webkit-box-shadow: $x $y $blur $c $rgba;
+  -moz-box-shadow: $x $y $blur $c $rgba;
+  -ms-box-shadow: $x $y $blur $c $rgba;
+  box-shadow: $x $y $blur $c $rgba;
+}
+
+
+@mixin media-screen-wh($xsmall, $small, $medium, $large, $xlarge) {
+  @media screen and (min-width: $media-xsmall) {
+    width: $xsmall;
+    height: $xsmall;
+  }
+  @media screen and (min-width: $media-small) {
+    width: $small;
+    height: $small;
+  }
+  @media screen and (min-width: $media-medium) {
+    width: $medium;
+    height: $medium;
+  }
+  @media screen and (min-width: $media-large) {
+    width: $large;
+    height: $large;
+  }
+  @media screen and (min-width: $media-xlarge) {
+    width: $xlarge;
+    height: $xlarge;
+  }
+}
+
+@mixin media-screen-h($xsmall, $small, $medium, $large, $xlarge) {
+  @media screen and (min-width: $media-xsmall) {
+    height: $xsmall;
+  }
+  @media screen and (min-width: $media-small) {
+    height: $small;
+  }
+  @media screen and (min-width: $media-medium) {
+    height: $medium;
+  }
+  @media screen and (min-width: $media-large) {
+    height: $large;
+  }
+  @media screen and (min-width: $media-xlarge) {
+    height: $xlarge;
+  }
+}
+
+@mixin media-screen-fontsize($xsmall, $small, $medium, $large, $xlarge) {
+  @media screen and (min-width: $media-xsmall) {
+    font-size: $xsmall;
+  }
+  @media screen and (min-width: $media-small) {
+    font-size: $small;
+  }
+  @media screen and (min-width: $media-medium) {
+    font-size: $medium;
+  }
+  @media screen and (min-width: $media-large) {
+    font-size: $large;
+  }
+  @media screen and (min-width: $media-xlarge) {
+    font-size: $xlarge;
+  }
+}
+
+//import styles
+@import "./styles/container.scss";
+@import "./styles/addTodo.scss";
+@import "./styles/todoList.scss";
+@import "./styles/modal.scss";

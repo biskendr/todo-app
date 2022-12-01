@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import AddTodo from './components/AddTodo'
 import Modal from './components/Modal'
 import TodoList from './components/TodoList'
+import './index.scss'
 
 const App = () => {
     const { open: isModalOpen } = useSelector(state => state.modal)

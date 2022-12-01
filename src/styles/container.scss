@@ -1,0 +1,22 @@
+body {
+  font-family: $font-sans-serif;
+  background-color: $bg-color-primary;
+  height: 100%;
+  width: 90%;  
+  margin: 0 auto;      
+}
+
+.app {
+  @include flex-center;
+  flex-direction: column;  
+  margin: 0 auto;  
+  h1 {
+    @include media-screen-fontsize(
+      $font-l,
+      $font-xl,
+      $font-xl,
+      $font-xl,
+      $font-xxl
+    );
+  }
+}
