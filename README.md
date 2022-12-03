@@ -1,6 +1,15 @@
 # Todo App
 A simple Todo App built using React, Redux and RTK.
 
+## Preview
+<hr/>
+
+### [Live Site](https://todo-app-biskendr.netlify.app/)
+
+<br/>
+
+![](src/assets/todo-app-gif.gif)
+
 ## How to build
 
 <hr/>
@@ -29,6 +38,7 @@ $ npm start
 * [Redux](https://github.com/reduxjs/redux)
 * [Redux Toolkit](https://github.com/reduxjs/redux)
 * [Nanoid](https://github.com/ai/nanoid)
+* [SASS](https://github.com/sass)
 * [Font Awesome](https://github.com/FortAwesome/react-fontawesome)
 
 
